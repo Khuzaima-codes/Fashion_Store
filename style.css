@@ -152,6 +152,17 @@
     border: 2px solid white !important;
     backdrop-filter: blur(10px);
 }
+.deal-image{
+    height: 100%;
+    background: url(images/bg-3.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* background-color: #bb9d7b; */
+    width: 75%;
+    top: 0 !important;
+    right: 0 !important;
+    z-index: -1;
+}
 @media only screen and (max-width: 768px) {
     .slider-info {
         left: 0%;
@@ -173,6 +184,18 @@
     .card-4 {
         grid-column: unset;
         grid-row: unset;
+    }
+    .deal-image{
+        position: unset !important;
+        width: 100%;
+        height: 400px;
+    }
+    .deal-head{
+        font-size: 2.5rem !important;
+    }
+    .deal-info{
+        width: 100% !important;
+        margin-top: 25px;
     }
 
 }
