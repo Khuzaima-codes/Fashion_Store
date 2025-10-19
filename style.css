@@ -163,6 +163,15 @@
     right: 0 !important;
     z-index: -1;
 }
+.deal-container,
+.carousel{
+    max-width: 1400px;
+}
+.service-card{
+    background: url(images/bg-2.svg) no-repeat;
+    background-position: right;
+    background-size: 50%;
+}
 @media only screen and (max-width: 768px) {
     .slider-info {
         left: 0%;
