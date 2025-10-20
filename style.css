@@ -118,10 +118,10 @@
 
 .cat-container {
     max-width: 1400px;
-    background: url(images/bg-2.svg) no-repeat;
+    background: url(images/back-images/bg-2.svg) no-repeat;
 }
 .satisfied-clients{
-    background: url(images/bg-2.svg) no-repeat;
+    background: url(images/back-images/bg-2.svg) no-repeat;
 }
 .cards {
     grid-template-columns: 1fr 1fr;
@@ -154,7 +154,7 @@
 }
 .deal-image{
     height: 100%;
-    background: url(images/bg-3.jpg) no-repeat;
+    background: url(images/back-images/bg-3.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     /* background-color: #bb9d7b; */
@@ -171,6 +171,27 @@
     background: url(images/bg-2.svg) no-repeat;
     background-position: right;
     background-size: 50%;
+}
+footer {
+    padding: 60px 0 30px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.copyright {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
 @media only screen and (max-width: 768px) {
     .slider-info {
