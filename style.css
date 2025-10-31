@@ -1,5 +1,8 @@
 .navbar {
     z-index: 10;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: white !important;
 }
 
 .font-jost {
@@ -53,6 +56,10 @@
     color: #bb9d7b !important;
     border-color: #bb9d7b !important;
     transition: 0.5s;
+}
+
+.bg-gold {
+    background-color: #bb9d7b;
 }
 
 .text-gold {
@@ -491,19 +498,24 @@ footer {
 .add-cart-btn:hover {
     background-color: #333;
 }
-.search{
+
+.search {
     position: relative;
 }
-.dropdown-menu{
+
+.dropdown-menu {
     border: 0px !important;
     box-shadow: 0px 0px 3px gainsboro !important;
 }
-.dropdown-menu li{
+
+.dropdown-menu li {
     border-color: gainsboro !important;
 }
-.dropdown-menu a{
+
+.dropdown-menu a {
     color: #555 !important;
 }
+
 @media (max-width: 991px) {
     .product-title {
         font-size: 1.8rem;
@@ -514,7 +526,57 @@ footer {
     }
 }
 
+.wishlist-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.5rem 0;
+    align-items: center;
+}
+
+.wishlist-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.wishlist-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.wishlist-price {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #222;
+}
+
+.wishlist-remove {
+    color: #777;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-clear {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-clear:hover {
+    background-color: #333;
+}
+
 @media only screen and (max-width: 768px) {
+    .navbar {
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
     .slider-info {
         left: 0%;
         top: 25%;
@@ -587,6 +649,11 @@ footer {
 
     .product-img img {
         max-width: 300px;
+    }
+
+    .wishlist-img {
+        width: 100px;
+        height: 100px;
     }
 }
 

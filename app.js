@@ -313,14 +313,24 @@ function subscribe(element) {
     if (input.value == "") {
       alert("Please Enter your email first");
     } else {
-      Swal.fire({
-        title: "Good job!",
-        text: "you have been subscribed our web page",
-        icon: "success",
-      });
+      if (input.value.endsWith("@gmail.com")) {
+        Swal.fire({
+          title: "Good job!",
+          text: "you have been subscribed our web page",
+          icon: "success",
+        });
+      } else {
+        Swal.fire({
+          title: "Please enter valid email address",
+          icon: "error",
+        });
+      }
     }
     input.value = "";
   } catch (error) {
     console.log(error);
   }
+}
+function removeWishlistProduct(element){
+  element.parentNode.parentNode.remove();
 }

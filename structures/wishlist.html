@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion Store | Blog</title>
+    <title>Fashion Store | Wishlist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -52,13 +52,13 @@
                                 aria-current="page" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle text-capitalize font-jost hover-line hover-color-gold"
+                            <a class="nav-link dropdown-toggle text-capitalize font-jost hover-line hover-color-gold"
                                 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 pages
                             </a>
                             <ul class="dropdown-menu rounded-0 border-gold">
                                 <li class="border-bottom border-1 border-gold text-capitalize"><a
-                                        class="dropdown-item text-gold" href="structures/about.html">about us</a></li>
+                                        class="dropdown-item text-gold" href="about.html">about us</a></li>
                                 <li class=" text-capitalize"><a class="dropdown-item text-gold"
                                         href="collection.html">collections</a></li>
                             </ul>
@@ -78,7 +78,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-capitalize font-jost hover-line hover-color-gold"
+                            <a class="nav-link active text-capitalize font-jost hover-line hover-color-gold"
                                 href="blog.html">blog</a>
                         </li>
                         <li class="nav-item">
@@ -123,91 +123,57 @@
             onclick="searchProduct()">Search</button>
     </div>
 
-    <section class="about-hero-sec text-capitalize font-jost">
-        <div class="about-hero-container d-flex">
-            <div class="hero-info align-content-center text-center px-5 py-3 border-bottom border-dark border-2 w-100 me-md-4"
-                style="height: 300px;">
-                <h2 class="about-hero-title mb-4" style="font-size: 3.6rem;">about us</h2>
-                <div class="links d-flex mx-auto text-center gap-3 border-start border-4 border-dark ps-3 rounded-1"
-                    style="width: fit-content;">
-                    <a href="../index.html" class="text-decoration-none text-dark hover-color-gold"
-                        style="font-weight: 500;">Home</a>
-                    <a href="blog.html" class="text-decoration-none hover-color-gold text-gold"
-                        style="font-weight: 500;">about</a>
-                </div>
-            </div>
-            <div class="hero-img d-none d-md-block w-100" style="max-width: 800px; height: 400px;">
-                <img src="../images/blog-images/blog-back.jpg" alt="" class="w-100 h-100 object-fit-cover">
-            </div>
-        </div>
-    </section>
+    <div class="container my-5 font-jost">
 
-    <section class="about-section container font-jost my-5">
-        <div class="text-center mb-5">
-            <h2 class="about-title">All About Company</h2>
-            <p class="about-subtitle">
-                Official representative of the world-famous clothing brand Mollee in Europe and the world.
-            </p>
-        </div>
+        <h2 class="fw-bold mb-4">My Wishlist</h2>
 
-        <div class="row align-items-start mb-5 gy-4">
-            <div class="col-lg-6 col-md-12">
-                <div class="d-flex align-items-start gap-3">
-                    <div class="about-year">2010</div>
-                    <div>
-                        <h5 class="fw-semibold">The Beginning Of Our Journey</h5>
-                        <p>
-                            In 2010, our company celebrated its 10th anniversary — these are the years of acquired
-                            experience of trading around the world.
-                            Join us among our clients! You can buy only original things from us. We offer products of
-                            your favorite brands — clothes, shoes,
-                            accessories, textiles, and much more — quality products for every taste and age from Europe.
-                        </p>
-                    </div>
-                </div>
+        <!-- Wishlist Item 1 -->
+        <div class="row wishlist-item">
+            <div class="col-md-2 col-4 text-center text-md-start">
+                <img src="../images/new-collection/product-item_1.jpg" class="wishlist-img" alt="Warm Sweater">
             </div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="about-card">
-                    <div class="dotted-bg"></div>
-                    <div class="about-card-content">
-                        <div class="about-number">2587 <span>+</span></div>
-                        <p class="fw-semibold mt-2">Products for you</p>
-                    </div>
-                </div>
+            <div class="col-md-5 col-8">
+                <h5 class="wishlist-title mb-2">Warm Casual Sweater</h5>
+                <p class="m-0 text-muted">Article: <span class="text-dark">000845DZ1</span></p>
+                <p class="m-0 text-muted">Status: <span class="text-success">IN STOCK</span></p>
+            </div>
+
+            <div class="col-md-3 col-6 text-md-end mt-3 mt-md-0">
+                <span class="wishlist-price">$28.99</span>
+            </div>
+
+            <div class="col-md-2 col-6 text-end mt-3 mt-md-0">
+                <i class="fa-solid fa-xmark wishlist-remove hover-color-gold" onclick="removeWishlistProduct(this)"></i>
             </div>
         </div>
 
-        <!-- Second Row -->
-        <div class="row align-items-start gy-4">
-            <div class="col-lg-6 col-md-12 order-lg-1 order-2">
-                <div class="about-card">
-                    <div class="dotted-bg"></div>
-                    <div class="about-card-content">
-                        <div class="about-number">5649 <span>+</span></div>
-                        <p class="fw-semibold mt-2">Satisfied clients</p>
-                    </div>
-                </div>
+        <div class="row wishlist-item">
+            <div class="col-md-2 col-4 text-center text-md-start">
+                <img src="../images/new-collection/product-item_2.jpg" class="wishlist-img" alt="Retro Style Handbag">
             </div>
 
-            <div class="col-lg-6 col-md-12 order-lg-2 order-1">
-                <div class="d-flex align-items-start gap-3">
-                    <div class="about-year">2020</div>
-                    <div>
-                        <h5 class="fw-semibold">Who Are We Now?</h5>
-                        <p>
-                            We now have a team of more than 1,000 skilled workers and about 167 clothing brands that
-                            cooperate with us.
-                            Ordering in our store is a saving of time and effort to find what you need; assistance of
-                            experienced consultants
-                            in choosing a model. Our specialists will help you specify your European size, tell you
-                            about fabrics and materials.
-                        </p>
-                    </div>
-                </div>
+            <div class="col-md-5 col-8">
+                <h5 class="wishlist-title mb-2">Retro Style Handbag</h5>
+                <p class="m-0 text-muted">Article: <span class="text-dark">000845DZ1</span></p>
+                <p class="m-0 text-muted">Status: <span class="text-success">IN STOCK</span></p>
+            </div>
+
+            <div class="col-md-3 col-6 text-md-end mt-3 mt-md-0">
+                <span class="wishlist-price">$83.99</span>
+            </div>
+
+            <div class="col-md-2 col-6 text-end mt-3 mt-md-0">
+                <i class="fa-solid fa-xmark wishlist-remove hover-color-gold" onclick="removeWishlistProduct(this)"></i>
             </div>
         </div>
-    </section>
+
+        <div class="align-items-center mt-4">
+            <button class="btn-clear">Clear Wishlist</button>
+        </div>
+    </div>
+
+
 
 
     <footer>
@@ -292,6 +258,20 @@
         crossorigin="anonymous"></script>
     <script src="../app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAeetneHVxYE15uLaH7CQCImsXyP0bB_1c",
+            authDomain: "fashion-store-9049f.firebaseapp.com",
+            projectId: "fashion-store-9049f",
+            storageBucket: "fashion-store-9049f.firebasestorage.app",
+            messagingSenderId: "81551344096",
+            appId: "1:81551344096:web:68733041c827c336c2eb85"
+        };
+
+        var app = firebase.initializeApp(firebaseConfig);
+
+        var db = firebase.database();
+    </script>
 </body>
 
 </html>
