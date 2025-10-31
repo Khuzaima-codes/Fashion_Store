@@ -115,10 +115,9 @@
     </header>
 
     <div class="searchbar-box w-100 text-center position-absolute bg-white py-5" id="searchBox">
-        <input type="text" placeholder="Search any item" class="searchbar border-0 border-bottom w-75 py-2 ps-3 fs-3"
-            style="max-width: 700px;">
-        <button class="close-searchbar bg-transparent border-0 fs-3" onclick="closeSearch()"><i
-                class="fa-solid fa-close"></i></button>
+        <input type="text" placeholder="Search any item" class="searchbar border-0 border-bottom w-75 py-2 ps-3 fs-3" style="max-width: 700px;" id="searchInput">
+        <button class="close-searchbar bg-transparent border-0 fs-3" onclick="closeSearch()"><i class="fa-solid fa-close"></i></button>
+        <button class="search btn-black-theme font-raleway text-capitalize btn btn-dark rounded-0" onclick="searchProduct()">Search</button>
     </div>
 
     <section class="blog-hero-sec text-capitalize font-jost">
@@ -276,13 +275,13 @@
                     <div class="input-box position-relative border-bottom py-3 ">
                         <input type="email" class="w-100 border-0 outline-0 ps-2" placeholder="Enter Your Email"
                             style="outline: none;">
-                        <button class="position-absolute bg-transparent border-0" style="right: 0;"><i
+                        <button class="position-absolute bg-transparent border-0" style="right: 0;" onclick="subscribe(this)"><i
                                 class="fa-solid fa-share text-secondary hover-color-gold"></i></button>
                     </div>
                 </div>
             </div>
             <div class="copyright d-flex justify-content-between">
-                <p>&copy; 2023 Medical Center. All Rights Reserved.</p>
+                <p>&copy; 2023 Fashion Store. All Rights Reserved.</p>
                 <div class="social-icons">
                     <a href="#" style="font-size: 14px;" class="text-black"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" style="font-size: 14px;" class="text-black"><i class="fab fa-twitter"></i></a>
@@ -297,6 +296,7 @@
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
     <script src="../app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

@@ -120,10 +120,9 @@
     </header>
 
     <div class="searchbar-box w-100 text-center position-absolute bg-white py-5" id="searchBox">
-        <input type="text" placeholder="Search any item" class="searchbar border-0 border-bottom w-75 py-2 ps-3 fs-3"
-            style="max-width: 700px;">
-        <button class="close-searchbar bg-transparent border-0 fs-3" onclick="closeSearch()"><i
-                class="fa-solid fa-close"></i></button>
+        <input type="text" placeholder="Search any item" class="searchbar border-0 border-bottom w-75 py-2 ps-3 fs-3" style="max-width: 700px;" id="searchInput">
+        <button class="close-searchbar bg-transparent border-0 fs-3" onclick="closeSearch()"><i class="fa-solid fa-close"></i></button>
+        <button class="search btn-black-theme font-raleway text-capitalize btn btn-dark rounded-0" onclick="searchProduct()">Search</button>
     </div>
 
     <section class="product-hero-sec text-capitalize font-jost">
@@ -256,13 +255,13 @@
                     <div class="input-box position-relative border-bottom py-3 ">
                         <input type="email" class="w-100 border-0 outline-0 ps-2" placeholder="Enter Your Email"
                             style="outline: none;">
-                        <button class="position-absolute bg-transparent border-0" style="right: 0;"><i
+                        <button class="position-absolute bg-transparent border-0" style="right: 0;" onclick="subscribe(this)"><i
                                 class="fa-solid fa-share text-secondary hover-color-gold"></i></button>
                     </div>
                 </div>
             </div>
             <div class="copyright d-flex justify-content-between">
-                <p>&copy; 2023 Medical Center. All Rights Reserved.</p>
+                <p>&copy; 2023 Fashion Store. All Rights Reserved.</p>
                 <div class="social-icons">
                     <a href="#" style="font-size: 14px;" class="text-black"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" style="font-size: 14px;" class="text-black"><i class="fab fa-twitter"></i></a>
@@ -289,7 +288,7 @@
 
         var app = firebase.initializeApp(firebaseConfig);
 
-        
+
         function addInfo() {
             var productImage = document.getElementById("product-side-image").src;
             var productTitle = document.getElementById("product_title").innerText;
@@ -297,7 +296,7 @@
             var image = localStorage.getItem("productImg");
             var title = localStorage.getItem("proTitle");
             var price = localStorage.getItem("proPrice");
-            
+
             if (image) {
                 document.getElementById("product-side-image").src = image;
             }
@@ -315,26 +314,47 @@
             var productImage = document.getElementById("product-side-image").src;
             var productTitle = document.getElementById("product_title").innerText;
             var productPrice = document.getElementById("porduct_price").innerText;
-            var productQty = document.getElementById("qty").value;
-            var newItem = db.ref("cartItems").push();
-            var key = newItem.push().key;
+            var productQty = Number(document.getElementById("qty").value);
 
-            newItem.set({
-                image: productImage,
-                title: productTitle,
-                price: productPrice,
-                quantity: Number(productQty),
-            })
-                .then(() => {
-                    alert("✅ Product added to cart!");
-                })
-                .catch((error) => {
-                    console.error("Error adding item: ", error);
+            const cartRef = db.ref("cartItems");
+
+            cartRef.once("value", (snapshot) => {
+                let alreadyAdded = false;
+
+                snapshot.forEach((child) => {
+                    const item = child.val();
+                    if (item.title === productTitle) {
+                        alreadyAdded = true;
+                    }
                 });
-        };
+
+                if (!alreadyAdded) {
+                    const newItem = cartRef.push();
+                    newItem
+                        .set({
+                            id: newItem.key,
+                            image: productImage,
+                            title: productTitle,
+                            price: productPrice,
+                            quantity: productQty,
+                        })
+                        .then(() => {
+                            Swal.fire("Good job!", "Product added to cart!", "success");
+                        })
+                        .catch((error) => {
+                            console.error("Error adding item: ", error);
+                        });
+                } else {
+                    Swal.fire("Already in Cart!", "You can’t add this product twice.", "warning");
+                }
+            });
+        }
+
 
         window.addEventListener("DOMContentLoaded", addInfo);
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 
 </html>

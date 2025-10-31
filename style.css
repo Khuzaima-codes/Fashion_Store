@@ -491,7 +491,19 @@ footer {
 .add-cart-btn:hover {
     background-color: #333;
 }
-
+.search{
+    position: relative;
+}
+.dropdown-menu{
+    border: 0px !important;
+    box-shadow: 0px 0px 3px gainsboro !important;
+}
+.dropdown-menu li{
+    border-color: gainsboro !important;
+}
+.dropdown-menu a{
+    color: #555 !important;
+}
 @media (max-width: 991px) {
     .product-title {
         font-size: 1.8rem;
