@@ -1,12 +1,12 @@
 function searchDown() {
-    var searchBox = document.getElementById("searchBox");
-    searchBox.classList.add("searchbar-down");
-    document.body.classList.add("shade")
+  var searchBox = document.getElementById("searchBox");
+  searchBox.classList.add("searchbar-down");
+  document.body.classList.add("shade");
 }
 function closeSearch() {
-    var searchBox = document.getElementById("searchBox");
-    searchBox.classList.remove("searchbar-down");
-    document.body.classList.remove("shade")
+  var searchBox = document.getElementById("searchBox");
+  searchBox.classList.remove("searchbar-down");
+  document.body.classList.remove("shade");
 }
 
 var cardSliderTabs = document.getElementsByClassName("card-sliding-tabs");
@@ -14,10 +14,10 @@ var newCollectImages = document.getElementsByClassName("new-collect-img");
 var newCollectTitles = document.getElementsByClassName("new-collect-title");
 var newCollectPrices = document.getElementsByClassName("new-collect-price");
 function changingCards(cardType, element) {
-    for (let i = 0; i < cardSliderTabs.length; i++) {
-        cardSliderTabs[i].classList.remove("active-sliding-tab");
-    }
-    element.classList.add("active-sliding-tab");
+  for (let i = 0; i < cardSliderTabs.length; i++) {
+    cardSliderTabs[i].classList.remove("active-sliding-tab");
+  }
+  element.classList.add("active-sliding-tab");
   if (cardType == "allCards") {
     var allNewImages = [
       "images/new-collection/product-item_1.jpg",
@@ -199,4 +199,46 @@ function changingCards(cardType, element) {
       newCollectPrices[i].innerHTML = allNewPrices[i];
     }
   }
+}
+
+function totalPrice() {
+  var prices = document.getElementsByClassName("product-total-cost");
+  var total = 0;
+
+  for (var i = 0; i < prices.length; i++) {
+    total = total + Number(prices[i].innerText);
+  }
+
+  document.getElementById("total-order-price").innerText = Math.round(total);
+
+  var totalOrderCost = document.getElementById("totalOrderCost");
+
+  totalOrderCost.innerHTML = Math.round(total + 16);
+}
+
+function increase() {
+  var qty = document.getElementById("qty");
+  qty.value = Number(qty.value) + 1;
+}
+
+function decrease() {
+  var qty = document.getElementById("qty");
+  if (qty.value > 1) qty.value = Number(qty.value) - 1;
+}
+function sizeBtnActive(btn) {
+  var allSize = document.getElementsByClassName("size-btn");
+  for (let i = 0; i < allSize.length; i++) {
+    allSize[i].classList.remove("active-size");
+    btn.classList.add("active-size");
+  }
+}
+
+function productCall(card) {
+  var image = card.childNodes[1].childNodes[1].src;
+  var title = card.childNodes[3].childNodes[1].innerHTML;
+  var price = card.childNodes[3].childNodes[3].innerHTML;
+  localStorage.setItem("productImg", image);
+  localStorage.setItem("proTitle", title);
+  localStorage.setItem("proPrice", price);
+  window.location.href = "structures/product.html";
 }
