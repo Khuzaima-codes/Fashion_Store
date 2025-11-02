@@ -51,6 +51,9 @@ var newCollectTitles = document.getElementsByClassName("new-collect-title");
 var newCollectPrices = document.getElementsByClassName("new-collect-price");
 function changingCards(cardType, element) {
   try {
+    for (let i = 0; i < cardSliderTabs.length; i++) {
+      cardSliderTabs[i].classList.remove("active-sliding-tab");
+    }
     element.classList.add("active-sliding-tab");
     if (cardType == "allCards") {
       var allNewImages = [
@@ -232,9 +235,6 @@ function changingCards(cardType, element) {
         newCollectTitles[i].innerHTML = allNewTitles[i];
         newCollectPrices[i].innerHTML = allNewPrices[i];
       }
-      for (let i = 0; i < cardSliderTabs.length; i++) {
-        cardSliderTabs[i].classList.remove("active-sliding-tab");
-      }
     }
   } catch (error) {
     console.log(error);
@@ -297,7 +297,7 @@ function productCall(card) {
     localStorage.setItem("productImg", image);
     localStorage.setItem("proTitle", title);
     localStorage.setItem("proPrice", price);
-    if (window.location.pathname == "/index.html") {
+    if (window.location.pathname.includes("index.html") || window.location.pathname.endsWith("/")) {
       window.location.href = "structures/product.html";
     } else {
       window.location.href = "product.html";
@@ -330,7 +330,4 @@ function subscribe(element) {
   } catch (error) {
     console.log(error);
   }
-}
-function removeWishlistProduct(element){
-  element.parentNode.parentNode.remove();
 }
