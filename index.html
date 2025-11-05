@@ -30,6 +30,7 @@
 
 <body>
 
+    <div class="space"></div>
     <nav class="navbar sticky-top navbar-expand-lg px-md-5 px-sm-2 bg-white">
         <div class="container-fluid align-items-center">
             <div class="d-flex align-items-center me-3">
@@ -83,7 +84,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-capitalize font-jost hover-line hover-color-gold"
-                                href="#">contact</a>
+                                href="structures/contact.html">contact</a>
                         </li>
                     </ul>
                 </div>
@@ -113,13 +114,13 @@
             </ul>
         </div>
     </nav>
-
+    <div class="space"></div>
     <div class="searchbar-box w-100 text-center position-absolute bg-white py-5" id="searchBox">
-        <input type="text" placeholder="Search any item" class="searchbar border-0 border-bottom w-75 py-2 ps-3 fs-3"
+        <input type="text" placeholder="Search any item" class="searchbar border-0 border-bottom w-75 py-2 ps-3 fs-3 my-2"
             style="max-width: 700px;" id="searchInput">
-        <button class="close-searchbar bg-transparent border-0 fs-3" onclick="closeSearch()"><i
+        <button class="close-searchbar bg-transparent border-0 fs-3 my-2" onclick="closeSearch()"><i
                 class="fa-solid fa-close"></i></button>
-        <button class="search btn-black-theme font-raleway text-capitalize btn btn-dark rounded-0"
+        <button class="search btn-black-theme font-raleway text-capitalize btn btn-dark rounded-0 my-2"
             onclick="searchProduct()">Search</button>
     </div>
 
@@ -127,7 +128,7 @@
         class="carousel mx-auto text-capitalize slide d-block d-md-flex px-md-5 position-relative"
         data-bs-ride="carousel">
         <div
-            class="social-links px-3 align-content-center text-center d-flex mb-3 mb-md-0 gap-4 flex-md-column justify-content-center">
+            class="social-links px-3 align-content-center text-center d-flex mb-3 mb-md-0 gap-4 flex-md-column justify-content-center top-bottom-anim">
             <a href="https://www.instagram.com"
                 class="font-jost text-decoration-none text-dark border-bottom border-1 border-dark py-2 hover-color-gold">Ins</a>
             <a href="https://www.facebook.com"
@@ -148,10 +149,10 @@
                 <img src="images/" class="d-block w-100 m-auto object-fit-cover" alt="..." style="height: 620px;">
             </div> -->
         </div>
-        <div class="slider-info ms-3 ms-md-5 ms-md-0 align-content-center position-absolute">
+        <div class="slider-info ms-3 ms-md-5 ms-md-0 align-content-center position-absolute top-bottom-anim">
             <p class="text-uppercase font-raleway"><span class="fw-bold">new</span> collection</p>
             <h2 class="hero-head font-jost" style="font-size: 4rem; font-weight: 500 !important; line-height: 1.5;">meet
-                new <br> <span class="bg-gold px-3 rounded-2 text-white">fashion</span> week</h2>
+                new <br> <span class="bg-dark px-3 rounded-2 text-gold">fashion</span> week</h2>
             <a href="structures/shop.html"
                 class="shop-btn btn-black-theme font-raleway text-capitalize mt-3 position-relative btn btn-dark rounded-0 px-4">shop
                 now</a>
@@ -260,7 +261,7 @@
     </section>
 
     <section class="new-collection text-capitalize my-5 font-raleway">
-        <div class="new-collect-container mx-auto">
+        <div class="new-collect-container mx-auto entry-anim">
             <div class="new-collect-head text-center">
                 <p class="text-uppercase font-raleway"><span class="fw-bold">new</span> collection</p>
                 <h3 class="font-jost fs-1" style="font-weight: 500 !important;">Featured products</h3>
@@ -453,7 +454,7 @@
     </section>
 
     <section class="deal text-capitalize px-3 px-md-5 font-raleway mx-md-5">
-        <div class="deal-container mx-auto position-relative align-content-center" style="height: 700px;">
+        <div class="deal-container entry-anim mx-auto position-relative align-content-center" style="height: 700px;">
             <div class="deal-image position-absolute"></div>
             <div class="deal-info text-md-start text-center" style="width: fit-content;">
                 <p class="text-uppercase font-raleway"><span class="fw-bold">deal</span> of the week</p>
@@ -469,7 +470,7 @@
     </section>
 
     <section class="service my-5 py-5 font-jost">
-        <div class="service-container row gap-5 w-100 mx-auto justify-content-center py-5">
+        <div class="service-container entry-anim row gap-5 w-100 mx-auto justify-content-center py-5">
             <div class="card mb-3 border-0 col-lg-4 col-md-6 service-card" style="width: 21rem;">
                 <img src="images/services-image/service-1.svg" alt="" class="mb-3" style="width: 70px;">
                 <h5 class="card-title mb-3 fs-4">Free Shipping</h5>
@@ -499,7 +500,7 @@
     </section>
 
     <section class="top-products font-raleway my-5">
-        <div class="top-product-container">
+        <div class="top-product-container entry-anim">
             <div class="top-product-head text-center py-5">
                 <p class="text-uppercase font-raleway"><span class="fw-bold">top</span> product</p>
                 <h3 class="font-jost fs-1 mb-3" style="font-weight: 500 !important;">Best sellers at fashion store</h3>
@@ -594,7 +595,7 @@
     </section>
 
     <section class="blog text-capitalize font-raleway" id="blog-sec">
-        <div class="blog-container">
+        <div class="blog-container entry-anim">
             <div class="blog-head text-center py-3">
                 <p class="text-uppercase font-raleway">our <span class="fw-bold">blog</span></p>
                 <h4 class="blog-title fs-2 mb-3" style="font-weight: 600;">the last in Mollee</h4>
