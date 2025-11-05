@@ -24,21 +24,25 @@ function searchProduct() {
     let cards = document.getElementsByClassName("card");
     let found = false;
 
-    for (let i = 0; i < cards.length; i++) {
-      var cardText =
-        cards[i].childNodes[3].childNodes[1].textContent.toLowerCase();
-      if (cardText.includes(input)) {
-        found = true;
-        cards[i].scrollIntoView({ behavior: "smooth", block: "center" });
-        var searchBox = document.getElementById("searchBox");
-        searchBox.classList.remove("searchbar-down");
-        document.body.classList.remove("shade");
-        input.value = "";
+    if (input === "") {
+      alert("Searchbar is empty");
+    } else {
+      for (let i = 0; i < cards.length; i++) {
+        var cardText =
+          cards[i].childNodes[3].childNodes[1].textContent.toLowerCase();
+        if (cardText.includes(input)) {
+          found = true;
+          cards[i].scrollIntoView({ behavior: "smooth", block: "center" });
+          var searchBox = document.getElementById("searchBox");
+          searchBox.classList.remove("searchbar-down");
+          document.body.classList.remove("shade");
+          document.getElementById("searchInput").value = "";
+        }
       }
-    }
-
-    if (found == false) {
-      alert("No product found!");
+  
+      if (found == false) {
+        alert("No product found!");
+      }
     }
   } catch (error) {
     console.log(error);
